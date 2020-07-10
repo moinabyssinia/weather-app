@@ -2,6 +2,9 @@
 window.addEventListener('load', ()=> {
     let long;
     let lat;
+    let temperatureDescription = document.querySelector('.temperature-description');
+    let temperatureDegree = document.querySelector('.temperature-degree');
+    let locationCity = document.querySelector('.location-city');
 
     //the navigator exists in the browser
     //get the exact location of the user
@@ -10,14 +13,32 @@ window.addEventListener('load', ()=> {
             console.log(position);
         long = position.coords.longitude;
         lat = position.coords.latitude;
-
+        locationID = 4167147;
         // get api call
-        const api = `http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=ce87cc05ff87da24b3c2bebc90c1499e/${lat},${long}`
+        const api = `http://api.openweathermap.org/data/2.5/weather?id=${locationID}&APPID=ce87cc05ff87da24b3c2bebc90c1499e&units=imperial`
 
-        fetch()
+        fetch(api)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                // get some data to display
+                const {temp} = data.main; 
+                const tempDescription = data.weather[0].description;
+                //set DOM elements from the API
+                temperatureDegree.textContent = temp;
+                temperatureDescription.textContent = tempDescription;
+                locationCity.textContent = data.name;
+            })
 
         })
     }else{
         h1.textContent = "Please allow your navigator"
     }
+
+    // function setIcons(icon, iconID){
+    //     const skycons = new skycons({color: "white"}):
+    //     const currentIcon = 
+    // }
 });
