@@ -15,7 +15,8 @@ window.addEventListener('load', ()=> {
         lat = position.coords.latitude;
         locationID = 4167147;
         // get api call
-        const api = `http://api.openweathermap.org/data/2.5/weather?id=${locationID}&APPID=ce87cc05ff87da24b3c2bebc90c1499e&units=imperial`
+        //use 'https://cors-anywhere.herokuapp.com/' to make it work
+        const api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?id=${locationID}&APPID=ce87cc05ff87da24b3c2bebc90c1499e&units=imperial`
 
         fetch(api)
             .then(response => {
