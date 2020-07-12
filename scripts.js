@@ -5,6 +5,7 @@ window.addEventListener('load', ()=> {
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelector('.temperature-degree');
     let locationCity = document.querySelector('.location-city');
+    let weatherIcon = document.getElementsByTagName("img");
 
     //the navigator exists in the browser
     //get the exact location of the user
@@ -13,10 +14,10 @@ window.addEventListener('load', ()=> {
             console.log(position);
         long = position.coords.longitude;
         lat = position.coords.latitude;
-        locationID = 4167147;
+        // locationID = 4167147;
         // get api call
         //use 'https://cors-anywhere.herokuapp.com/' to make it work
-        const api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?id=${locationID}&APPID=ce87cc05ff87da24b3c2bebc90c1499e&units=imperial`
+        const api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=ce87cc05ff87da24b3c2bebc90c1499e&units=imperial`
 
         fetch(api)
             .then(response => {
@@ -28,9 +29,10 @@ window.addEventListener('load', ()=> {
                 const {temp} = data.main; 
                 const tempDescription = data.weather[0].description;
                 //set DOM elements from the API
-                temperatureDegree.textContent = temp;
+                temperatureDegree.textContent = temp+ " F";
                 temperatureDescription.textContent = tempDescription;
                 locationCity.textContent = data.name;
+                weatherIcon[0].src = 'http://openweathermap.org/img/wn/10d@2x.png';
             })
 
         })
