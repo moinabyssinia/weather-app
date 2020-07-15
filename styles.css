@@ -1,13 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body{
     height: 100vh;
     display: flex;
-    justify-content: center;
+    margin: 0 0;
+    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
@@ -35,6 +31,42 @@ body{
     margin: 10px;
     font-size: 30px;
 }
+.temperature-description{
+    text-align: center;
+}
 .degree-section h2{
     font-size: 40px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li:nth-of-type(1){
+    font-size: 25px;;
+}
+
+nav li{
+    padding: 0 20px;
+    float: left;
+}
+
+nav a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav{
+    margin: 0 0; 
+    padding: 15px 20px;
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
 }

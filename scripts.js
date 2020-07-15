@@ -3,8 +3,8 @@ window.addEventListener('load', ()=> {
     let long;
     let lat;
     let temperatureDescription = document.querySelector('.temperature-description');
-    let temperatureDegree = document.querySelector('.temperature-degree');
-    let locationCity = document.querySelector('.location-city');
+    let temperatureDegree = document.querySelectorAll('.temperature-degree');
+    let locationCity = document.querySelectorAll('.location-city');
     let weatherIcon = document.getElementsByTagName("img");
 
     //the navigator exists in the browser
@@ -29,10 +29,17 @@ window.addEventListener('load', ()=> {
                 const {temp} = data.main; 
                 const tempDescription = data.weather[0].description;
                 //set DOM elements from the API
-                temperatureDegree.textContent = temp+ " F";
+                for (var j = 0; j < temperatureDegree.length; j++){
+                    temperatureDegree[j].textContent = temp+ " F";
+                }
                 temperatureDescription.textContent = tempDescription;
-                locationCity.textContent = data.name;
-                weatherIcon[0].src = 'http://openweathermap.org/img/wn/10d@2x.png';
+                for (var i = 0; i < locationCity.length; i++){
+                    locationCity[i].textContent = data.name;
+                }
+
+                let currentIcon = data.weather[0].icon;
+
+                weatherIcon[0].src = `http://openweathermap.org/img/wn/${currentIcon}@2x.png`;
             })
 
         })
