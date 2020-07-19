@@ -6,7 +6,8 @@ body{
     /* justify-content: center; */
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    /* background: linear-gradient(rgb(47,150,163), rgb(48,62,143)); */
+    background: white;
     font-family: sans-serif;
     color: white;
 }
@@ -15,14 +16,25 @@ body{
     height: 30vh;
     width: 50%;
     display: flex;
+    flex-direction: column;
+    background-color: rgb(138, 136, 136);
+    color: black;
+    margin: 20px auto auto auto;
     justify-content: space-around;
     align-items: center;
 }
-
+.name-icon{
+    display: flex;
+    flex-direction: row;
+}
 .temperature{
     flex-direction: column;
 }
+.current{
+    display: block;
+    text-align: end;
 
+}
 .degree-section{
     display: flex;
     align-items: center;

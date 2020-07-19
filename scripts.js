@@ -6,6 +6,11 @@ window.addEventListener('load', ()=> {
     let temperatureDegree = document.querySelectorAll('.temperature-degree');
     let locationCity = document.querySelectorAll('.location-city');
     let weatherIcon = document.getElementsByTagName("img");
+    const currentTimeDOM = document.querySelector(".location-time");
+    const currentTime = new Date();
+
+    
+    currentTimeDOM.textContent = String(currentTime).slice(0,24);
 
     //the navigator exists in the browser
     //get the exact location of the user
