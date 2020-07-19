@@ -13,28 +13,27 @@ body{
 }
 
 .location, .temperature{
-    height: 30vh;
+    height: 40%;
     width: 50%;
     display: flex;
-    flex-direction: column;
-    background-color: rgb(138, 136, 136);
+    flex-direction: row;
+    background-color: rgb(231, 229, 229);
     color: black;
     margin: 20px auto auto auto;
-    justify-content: space-around;
+    padding: 20px;
+    justify-content: space-between;
     align-items: center;
 }
 .name-icon{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+
 .temperature{
     flex-direction: column;
 }
-.current{
-    display: block;
-    text-align: end;
 
-}
 .degree-section{
     display: flex;
     align-items: center;
