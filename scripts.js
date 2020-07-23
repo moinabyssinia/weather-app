@@ -4,6 +4,7 @@ window.addEventListener('load', ()=> {
     let lat;
     let temperatureDescription = document.querySelector('.temperature-description');
     let temperatureDegree = document.querySelectorAll('.temperature-degree');
+    let temperatureSmall = document.querySelectorAll('.temperature-small');
     let locationCity = document.querySelectorAll('.location-city');
     let weatherIcon = document.getElementsByTagName("img");
     const currentTimeDOM = document.querySelector(".location-time");
@@ -36,6 +37,7 @@ window.addEventListener('load', ()=> {
                 //set DOM elements from the API
                 for (var j = 0; j < temperatureDegree.length; j++){
                     temperatureDegree[j].textContent = temp+ " F";
+                    temperatureSmall[j].textContent = temp+ " F";
                 }
                 temperatureDescription.textContent = tempDescription;
                 for (var i = 0; i < locationCity.length; i++){
